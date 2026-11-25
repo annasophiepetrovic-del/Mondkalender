@@ -812,9 +812,10 @@ function BuyModal({ onClose }) {
         {PAKETE.map((p) => (
           <button key={p.id} type="button" className="pack" disabled={!!busy} onClick={() => buy(p.id)}>
             <span>{p.tokens} Token</span>
-            <span className="price">{eur(p.cents)} <small>{PREIS_HINWEIS}</small></span>
+            <span className="price">{eur(p.cents)}</span>
           </button>
         ))}
+        {PREIS_HINWEIS && <p className="note" style={{ textAlign: "center", margin: "8px 0 0" }}>{PREIS_HINWEIS}</p>}
         {busy && <Spinner>Du wirst zur Bezahlung weitergeleitet …</Spinner>}
         {err && <p className="msg" role="alert">{err}</p>}
         <p className="note" style={{ textAlign: "center", margin: "8px 0 0" }}>Die Bezahlung läuft sicher über Stripe.</p>
