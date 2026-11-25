@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { PAKETE, FREE_TOKENS, PREIS_HINWEIS, DATENSCHUTZ_URL, NEWSLETTER_PFLICHT, NEWSLETTER_TEXT } from "../lib/config";
+import { PAKETE, FREE_TOKENS, PREIS_HINWEIS, DATENSCHUTZ_URL, IMPRESSUM_URL, NEWSLETTER_PFLICHT, NEWSLETTER_TEXT } from "../lib/config";
 
 /* ================= Styles (inline, ohne Tailwind) ================= */
 const CSS = `
@@ -949,6 +949,11 @@ export default function Page() {
 
         <footer>
           Die Mondstände werden berechnet und können um wenige Minuten abweichen. Hinweise zu Merkur und Finsternissen sind ungefähre Angaben. Alles hier ist Inspiration für deine Praxis, keine Gewissheit. Deine Eingaben bleiben in deinem Browser.
+          <p style={{ margin: "12px 0 0" }}>
+            <a href={IMPRESSUM_URL} target="_blank" rel="noopener noreferrer">Impressum</a>
+            {" · "}
+            <a href={DATENSCHUTZ_URL} target="_blank" rel="noopener noreferrer">Datenschutz</a>
+          </p>
         </footer>
       </div>
     </>
